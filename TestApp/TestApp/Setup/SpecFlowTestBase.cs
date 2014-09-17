@@ -12,6 +12,7 @@ using TestApp.Pages;
 
 namespace TestApp.Setup
 {
+    [Binding]
     public class SpecFlowTestBase:TestBase
     {
 
@@ -23,8 +24,9 @@ namespace TestApp.Setup
         {
             Maximize();
             Driver.Browser.NavigateTo(BaseUrl);
-            var homePage = new HomePage();
-            ScenarioContext.Current.Set(homePage);
+            var home = new HomePage();
+            home.Refresh();
+            ScenarioContext.Current.Set(home);
         }
 
         /// <summary>

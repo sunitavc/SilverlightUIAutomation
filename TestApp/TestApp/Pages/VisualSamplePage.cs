@@ -37,9 +37,13 @@ namespace TestApp.Pages
         /// then method chaining would help me build expressions that make business sense
         /// It's a technique used in building DSLs
         /// </summary>
-        public VisualSamplePage Check()
+        public VisualSamplePage Uncheck()
         {
-            Checkbox.User.Click();
+            //Ideally I should have wrapper methods for Check and Uncheck.
+            //Pity webaii's API is not so advanced
+            //It makes sense to have a FrameworkElementExtension method like the one I've written here
+            //for Click() that I would call Check() and Uncheck()
+            Checkbox.Click();
             return this;
         }
 
@@ -53,7 +57,7 @@ namespace TestApp.Pages
         /// <returns></returns>
         public bool IsChecked()
         {
-            return Checkbox.Get<string>("IsChecked").Equals("True");
+            return Checkbox.Get<string>("IsChecked").Equals("False");
         }
 
         #endregion

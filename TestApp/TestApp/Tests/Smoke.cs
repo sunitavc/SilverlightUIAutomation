@@ -9,6 +9,14 @@ using TestApp.Setup;
 
 namespace TestApp.Tests
 {
+
+    /// <summary>
+    /// Plain ol' NUnit Tests. They inherit from TestBase as the metadata tags for setups and teardown
+    /// is different for NUnit and for SpecFlow
+    /// TIP: It's totally ok to have sanity tests in NUnit and business level tests in SpecFlow in the same repo
+    /// Since Specflow also can use NUnit as a runner you can setup the pipeline to run NUnit Smoke tests first
+    /// and if it all passes run the longer e2e scenarios.
+    /// </summary>
     public class Smoke:TestBase
     {
         [Test]
@@ -21,7 +29,7 @@ namespace TestApp.Tests
         [Test]
         public void TestVisualSampleCheckBox()
         {
-            var checkbox = homePage.MainMenu().OpenVisualSamplesPage().Check();
+            var checkbox = homePage.MainMenu().OpenVisualSamplesPage().Uncheck();
             Assert.True(checkbox.IsChecked().Equals(true));
         }
     }

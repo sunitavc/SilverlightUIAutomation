@@ -5,7 +5,7 @@ using TestApp.Setup;
 namespace TestApp.Pages
 {
     /// <summary>
-    /// The class that models the Page Object
+    /// The class that models the Page Object for silverlight pages
     /// In order for the Bitmap code to work, you have to reference the System.Drawing assembly 
     /// No idea why it wasn't referenced automagically. Duh.
     /// I have a Draw() method that is required to be implemented because I find this to be a better

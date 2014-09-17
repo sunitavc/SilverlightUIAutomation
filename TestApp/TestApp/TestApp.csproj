@@ -55,6 +55,9 @@
     <Reference Include="nunit.framework, Version=2.6.3.13283, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
       <HintPath>..\packages\NUnit.2.6.3\lib\nunit.framework.dll</HintPath>
     </Reference>
+    <Reference Include="Should.Fluent">
+      <HintPath>..\packages\ShouldFluent.1.1.19\lib\Should.Fluent.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
@@ -70,9 +73,14 @@
   <ItemGroup>
     <Compile Include="Components\BaseComponent.cs" />
     <Compile Include="Components\TopMenu.cs" />
+    <Compile Include="Extensions\FrameworkElementExtensions.cs" />
     <Compile Include="Extensions\SilverlightExtensions.cs" />
+    <Compile Include="Features\Sanity.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Sanity.feature</DependentUpon>
+    </Compile>
     <Compile Include="Pages\BasePage.cs" />
-    <Compile Include="Class1.cs" />
     <Compile Include="Pages\BindingSamplePage.cs" />
     <Compile Include="Pages\HomePage.cs" />
     <Compile Include="Pages\VisualSamplePage.cs" />
@@ -82,12 +90,19 @@
     <Compile Include="Setup\SpecFlowTestBase.cs" />
     <Compile Include="Setup\TestBase.cs" />
     <Compile Include="Setup\WebAiiDriver.cs" />
+    <Compile Include="StepDefinitions\SanitySteps.cs" />
     <Compile Include="Tests\Smoke.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="runtest.build" />
+    <None Include="Features\Sanity.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Sanity.feature.cs</LastGenOutput>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
